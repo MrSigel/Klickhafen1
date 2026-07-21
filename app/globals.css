@@ -1,26 +1,195 @@
 @import "tailwindcss";
 
+/* ============================================================
+   Klickhafen — Hausdesign (klickdesigns-house-style)
+   Dunkle Basis auf Wunsch von Enrico. Die Token-NAMEN bleiben
+   wie im Skill (paper = Fläche, ink = Text), nur die Werte sind
+   gedreht: paper ist jetzt Tiefwasser, ink das warme Licht darauf.
+   Ein Akzent. Zwei Faces. Keine Graustufen aus Tailwind.
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Flächen — leicht grünstichiges Schwarz, damit der Akzent nicht
+     wie aufgeklebt wirkt. Kein reines #000, kein neutrales #0a0a0a. */
+  --paper: #0b0f0e; /* Basis */
+  --paper-sunk: #121917; /* gehobene Fläche, Sektionswechsel */
+  --paper-lift: #182220; /* Karten-Hover, Overlay */
+  --paper-deep: #060908; /* tiefste Fläche: CTA-Band, Footer */
+
+  /* Text — warmes Off-White statt kaltes Weiß. */
+  --ink: #eceae3;
+  --ink-soft: #9ba39e;
+  --ink-faint: #7c8781; /* heller als üblich, damit 12px-Eyebrows AA halten */
+
+  /* Hairlines — sehr zurückhaltend, sonst zerfällt die Fläche in Kästchen. */
+  --line: #222b27;
+  --line-strong: #35403b;
+
+  /* Der eine Akzent: Tannengrün, für dunklen Grund angehoben. */
+  --accent: #45a182;
+  --accent-hover: #5cbe9b;
+  --accent-deep: #1b4d3e; /* das ursprüngliche Tannengrün, für Flächen */
+  --accent-ink: #04100c; /* Text auf Akzentflächen */
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-paper-sunk: var(--paper-sunk);
+  --color-paper-lift: var(--paper-lift);
+  --color-paper-deep: var(--paper-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-ink: var(--accent-ink);
+
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-hanken), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Type-Scale: klare Stufen, große Sprünge — keine gleichmäßige Rampe. */
+  --text-display-xl: clamp(3rem, 6.4vw, 6rem);
+  --text-display-xl--line-height: 0.95;
+  --text-display-xl--letter-spacing: -0.025em;
+
+  --text-h1: clamp(2.25rem, 4vw, 3.5rem);
+  --text-h1--line-height: 1.02;
+  --text-h1--letter-spacing: -0.015em;
+
+  --text-h2: clamp(1.625rem, 2.6vw, 1.875rem);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.01em;
+
+  --text-h3: 1.25rem;
+  --text-h3--line-height: 1.2;
+
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.6;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.12em;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    /* Next 16 überschreibt scroll-behavior nicht mehr selbst. */
+    scroll-behavior: smooth;
+    background-color: var(--paper);
+    /* Overscroll oben/unten zeigt Tiefwasser, nicht Weiß. */
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-size: var(--text-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  /* Sichtbarer Keyboard-Focus, überall, ohne Ausnahme. */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 400;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Eyebrow: Mono, uppercase, weit gesperrt — Signature-Detail, sparsam. */
+  .eyebrow {
+    font-family: var(--font-mono), monospace;
+    font-size: var(--text-eyebrow);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  /* Die Peilung: kurze Hairline vor dem Eyebrow — der rote Faden. */
+  .eyebrow::before {
+    content: "";
+    inline-size: 1.75rem;
+    block-size: 1px;
+    background-color: var(--line-strong);
+    flex: none;
+  }
+
+  /* Ein einziger, sehr weicher Lichtschein — hinter der Signature und
+     unter dem CTA-Band. Bewusst kein Verlauf über die ganze Seite:
+     flächige Gradients sind genau der Look, der billig wirkt. */
+  .schein {
+    position: absolute;
+    border-radius: 9999px;
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--accent) 22%, transparent) 0%,
+      transparent 70%
+    );
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+/* Der Anker der Wortmarke schwingt sacht an seiner Öse — wie ein hängender
+   Anker, der leicht pendelt. Nimmt dem Logo das Statische, ohne Effekt zu sein.
+   Ruht bei 0°/100° aufrecht, damit reduced-motion es aufrecht einfriert. */
+@keyframes anker-schwingen {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2.4deg);
+  }
+  75% {
+    transform: rotate(-2.4deg);
+  }
+}
+
+.anker-idle {
+  /* Drehpunkt an der Öse (oben Mitte), nicht in der Bildmitte. */
+  transform-origin: 50% 15%;
+  animation: anker-schwingen 5.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
