@@ -1,6 +1,6 @@
 # Klickhafen
 
-Agentur-Website für klickhafen.info. Next.js 16 (App Router), TypeScript,
+Agentur-Website für klickhafen.com. Next.js 16 (App Router), TypeScript,
 Tailwind v4, React Three Fiber für die 3D-Signature.
 
 ```bash
@@ -63,15 +63,15 @@ Auswertung, PDF) steht — es fehlt die CRUD-Oberfläche.
 1. Code in ein Git-Repo (GitHub/GitLab) pushen.
 2. Auf vercel.com das Repo importieren → Framework „Next.js" wird erkannt →
    Deploy. Kein Build-Befehl nötig, Vercel kennt Next 16.
-3. Domain `klickhafen.info` in Vercel unter „Domains" hinzufügen und die zwei
+3. Domain `klickhafen.com` in Vercel unter „Domains" hinzufügen und die zwei
    DNS-Einträge beim Domain-Anbieter setzen (Vercel zeigt sie an).
 4. **Vercel-DPA bestätigen** (Settings → Legal) — nötig für die Datenschutz-
    erklärung.
-5. Nach Livegang: `klickhafen.info/sitemap.xml` in der **Google Search Console**
+5. Nach Livegang: `klickhafen.com/sitemap.xml` in der **Google Search Console**
    einreichen; Property vorher per DNS verifizieren.
 
 Alle URLs (Canonical, OG, Schema, Sitemap) zeigen bereits auf
-`https://klickhafen.info` (`metadataBase` in `app/layout.tsx`). Bis die Domain
+`https://klickhafen.com` (`metadataBase` in `app/layout.tsx`). Bis die Domain
 verbunden ist, keine Vercel-Preview-URL bei Google einreichen — Previews sind
 ohnehin auf noindex.
 
@@ -352,7 +352,7 @@ On-Page ist stark aufgestellt — der Rest liegt bei dir und braucht Zeit.
 2. **Bewertungen** aktiv einholen (Google). Aktuell null. Lokaler Top-Faktor.
 3. **Citations / NAP-Konsistenz**: Einträge in Branchenverzeichnissen, überall
    identische Angaben (Name, Adresse, Telefon).
-4. **Backlinks + Zeit.** `klickhafen.info` ist neu = kaum Autorität. Platz 1
+4. **Backlinks + Zeit.** `klickhafen.com` ist neu = kaum Autorität. Platz 1
    ist Wochen bis Monate Arbeit, kein Schalter. Niemand kann #1 garantieren.
 
 ## SEO / AEO / GEO — die technische Ebene
@@ -432,7 +432,7 @@ URL-kodierter Erstnachricht. Neue CTAs bitte ausschließlich über
       trage ich sie in `sameAs` ein. Dazu ggf. LinkedIn/Instagram. Starkes
       E-E-A-T-Signal, aktuell ungenutzt.
 - [ ] **Geschäftliche E-Mail** — im Impressum steht die Gmail-Adresse. Eine
-      Adresse auf der eigenen Domain (z. B. `info@klickhafen.info`) wirkt für
+      Adresse auf der eigenen Domain (z. B. `info@klickhafen.com`) wirkt für
       eine Agentur deutlich professioneller.
 - [ ] **`lib/site.ts` → `fakten` gegenlesen.** Das sind Zusagen, keine
       Werbetexte: „Festpreis", „Antwort am selben Werktag", „Code gehört Ihnen"

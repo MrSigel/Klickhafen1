@@ -25,7 +25,7 @@ create table if not exists public.einstellungen (
   -- Kontakt
   email             text             default 'kontakt@klickhafen.com',
   telefon           text             default '+4915563535989',
-  web               text             default 'klickhafen.info',
+  web               text             default 'klickhafen.com',
 
   -- Bankverbindung (leer = neutrale Zahlungszeile auf der Rechnung)
   bank_inhaber      text,

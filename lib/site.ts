@@ -2,8 +2,8 @@
 
 export const site = {
   name: "Klickhafen",
-  domain: "klickhafen.info",
-  url: "https://klickhafen.info",
+  domain: "klickhafen.com",
+  url: "https://klickhafen.com",
   /** Standard-Title der Startseite */
   title: "Klickhafen — Webdesign, Webentwicklung & Automationen",
   slogan: "Der Hafen für alles, was mit Web zu tun hat.",
