@@ -10,6 +10,7 @@ const nav = [
   { href: "/admin/projekte", label: "Projekte" },
   { href: "/admin/ausgaben", label: "Ausgaben" },
   { href: "/admin/rechnungen", label: "Rechnungen" },
+  { href: "/admin/einstellungen", label: "Einstellungen" },
 ];
 
 /**

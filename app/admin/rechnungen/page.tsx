@@ -29,6 +29,15 @@ export default async function RechnungenSeite() {
 
   return (
     <AdminShell titel="Rechnungen" aktiv="/admin/rechnungen">
+      <p className="-mt-4 mb-8 max-w-[60ch] text-small text-ink-soft">
+        Absender, Bankverbindung, § 19 UStG und der Rechnungstext werden zentral
+        gepflegt —{" "}
+        <Link href="/admin/einstellungen" className="text-accent hover:underline">
+          zu den Rechnungs-Einstellungen
+        </Link>
+        .
+      </p>
+
       <Karte
         titel={`Rechnungen (${rechnungen.length})`}
         aktion={

@@ -8,6 +8,8 @@ import {
   rechnungStatus,
 } from "@/lib/admin/aktionen";
 import { rechnungLaden } from "@/lib/admin/daten";
+import { einstellungenLaden } from "@/lib/admin/einstellungen";
+import { rechnungBetrag } from "@/lib/admin/rechnung-betrag";
 import { datum, euro } from "@/lib/admin/format";
 import { aktuellerNutzer } from "@/lib/admin/supabase";
 
@@ -35,7 +37,12 @@ export default async function RechnungDetail({
   if (!geladen) notFound();
 
   const { rechnung, posten } = geladen;
-  const summe = posten.reduce((s, p) => s + Number(p.menge) * Number(p.einzelpreis), 0);
+  const e = await einstellungenLaden();
+  const betrag = rechnungBetrag(
+    posten.map((p) => ({ menge: Number(p.menge), einzelpreis: Number(p.einzelpreis) })),
+    { kleinunternehmer: e.kleinunternehmer, ustSatz: e.ustSatz },
+  );
+  const ustLabel = betrag.ustSatz.toString().replace(".", ",");
 
   return (
     <AdminShell titel={`Rechnung ${rechnung.nummer}`} aktiv="/admin/rechnungen">
@@ -73,12 +80,26 @@ export default async function RechnungDetail({
               </li>
             ))}
           </ul>
+          {!e.kleinunternehmer && (
+            <div className="mt-4 flex flex-col gap-1.5 text-small text-ink-soft">
+              <div className="flex items-center justify-between">
+                <span>Zwischensumme (netto)</span>
+                <span className="font-mono">{euro(betrag.netto)}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span>zzgl. {ustLabel} % USt</span>
+                <span className="font-mono">{euro(betrag.ust)}</span>
+              </div>
+            </div>
+          )}
           <div className="mt-4 flex items-center justify-between border-t-2 border-ink pt-4">
             <span className="font-display text-h3">Gesamtbetrag</span>
-            <span className="font-display text-h3">{euro(summe)}</span>
+            <span className="font-display text-h3">{euro(betrag.brutto)}</span>
           </div>
           <p className="mt-3 text-small text-ink-faint">
-            Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.
+            {e.kleinunternehmer
+              ? "Gemäß § 19 UStG wird keine Umsatzsteuer berechnet."
+              : `Enthält ${ustLabel} % Umsatzsteuer (${euro(betrag.ust)}).`}
           </p>
         </Karte>
 

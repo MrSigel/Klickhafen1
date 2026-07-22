@@ -40,6 +40,39 @@ export function Feld({
   );
 }
 
+export function Feldgross({
+  label,
+  name,
+  pflicht = false,
+  platzhalter,
+  wert,
+  zeilen = 3,
+}: {
+  label: string;
+  name: string;
+  pflicht?: boolean;
+  platzhalter?: string;
+  wert?: string;
+  zeilen?: number;
+}) {
+  return (
+    <label className="flex flex-col gap-1.5">
+      <span className="font-mono text-eyebrow tracking-[0.12em] text-ink-faint uppercase">
+        {label}
+        {pflicht && <span className="text-accent"> *</span>}
+      </span>
+      <textarea
+        name={name}
+        required={pflicht}
+        placeholder={platzhalter}
+        defaultValue={wert}
+        rows={zeilen}
+        className={cx(feldBasis, "resize-y leading-relaxed")}
+      />
+    </label>
+  );
+}
+
 export function Auswahl({
   label,
   name,

@@ -207,6 +207,40 @@ export async function rechnungLoeschen(fd: FormData) {
  * (react-pdf, resend) werden erst hier dynamisch geladen, nicht bei jeder
  * Aktion. Rückmeldung über einen Query-Parameter auf der Detailseite.
  */
+/* ---- Einstellungen (Firma / Rechnung) ---- */
+export async function einstellungenSpeichern(fd: FormData) {
+  const supabase = await client();
+  const { error } = await supabase.from("einstellungen").upsert({
+    id: 1,
+    firma: pflichtStr(fd, "firma") || "Klickhafen",
+    eyebrow: str(fd, "eyebrow"),
+    logo_zeigen: bool(fd, "logo_zeigen"),
+    inhaber: pflichtStr(fd, "inhaber"),
+    strasse: str(fd, "strasse"),
+    plz: str(fd, "plz"),
+    ort: str(fd, "ort"),
+    email: str(fd, "email"),
+    telefon: str(fd, "telefon"),
+    web: str(fd, "web"),
+    bank_inhaber: str(fd, "bank_inhaber"),
+    iban: str(fd, "iban"),
+    bic: str(fd, "bic"),
+    bank_name: str(fd, "bank_name"),
+    kleinunternehmer: bool(fd, "kleinunternehmer"),
+    ust_satz: num(fd, "ust_satz") || 19,
+    ust_id: str(fd, "ust_id"),
+    steuernummer: str(fd, "steuernummer"),
+    zahlungsziel_tage: Math.round(num(fd, "zahlungsziel_tage")) || 14,
+    rechnung_fuss: str(fd, "rechnung_fuss"),
+    aktualisiert: new Date().toISOString(),
+  });
+  revalidatePath("/admin/einstellungen");
+  revalidatePath("/admin/rechnungen");
+  // Häufigster Fehler: Migration supabase/einstellungen.sql noch nicht gelaufen.
+  if (error) redirect("/admin/einstellungen?fehler=tabelle");
+  redirect("/admin/einstellungen?gespeichert=1");
+}
+
 export async function rechnungSenden(fd: FormData) {
   const supabase = await client();
   const id = pflichtStr(fd, "id");
@@ -222,15 +256,20 @@ export async function rechnungSenden(fd: FormData) {
   if (!geladen!.empfaengerEmail) zielRedirect("hinweis=keine-email");
 
   const { rechnungPdf } = await import("./rechnung-pdf");
+  const { einstellungenLaden } = await import("./einstellungen");
   const { Resend } = await import("resend");
-  const pdf = await rechnungPdf(geladen!.daten);
+  const [pdf, e] = await Promise.all([
+    rechnungPdf(geladen!.daten),
+    einstellungenLaden(),
+  ]);
+  const absenderMail = e.email ?? "kontakt@klickhafen.com";
 
   const resend = new Resend(process.env.RESEND_API_KEY);
   const { error } = await resend.emails.send({
-    from: process.env.RESEND_FROM ?? "kontakt@klickhafen.com",
+    from: process.env.RESEND_FROM ?? `${e.firma} <${absenderMail}>`,
     to: geladen!.empfaengerEmail!,
-    subject: `Rechnung ${geladen!.daten.nummer} — Klickhafen`,
-    text: `Guten Tag,\n\nanbei die Rechnung ${geladen!.daten.nummer}.\n\nBeste Grüße\nEnrico Gross · Klickhafen`,
+    subject: `Rechnung ${geladen!.daten.nummer} — ${e.firma}`,
+    text: `Guten Tag,\n\nanbei die Rechnung ${geladen!.daten.nummer}.\n\nBeste Grüße\n${e.inhaber} · ${e.firma}`,
     attachments: [
       {
         filename: `Rechnung-${geladen!.daten.nummer}.pdf`,

@@ -73,6 +73,34 @@ export type RechnungPosten = {
   position: number;
 };
 
+/**
+ * Firmen-/Rechnungseinstellungen — spiegelt supabase/einstellungen.sql.
+ * Genau eine Zeile (id = 1). Steuert alles, was auf der Rechnung steht.
+ */
+export type Einstellungen = {
+  firma: string;
+  eyebrow: string | null;
+  logoZeigen: boolean;
+  inhaber: string;
+  strasse: string | null;
+  plz: string | null;
+  ort: string | null;
+  email: string | null;
+  telefon: string | null;
+  web: string | null;
+  bankInhaber: string | null;
+  iban: string | null;
+  bic: string | null;
+  bankName: string | null;
+  /** true = § 19 UStG (keine USt); false = Regelbesteuerung (USt ausweisen). */
+  kleinunternehmer: boolean;
+  ustSatz: number;
+  ustId: string | null;
+  steuernummer: string | null;
+  zahlungszielTage: number;
+  rechnungFuss: string | null;
+};
+
 /** Auswertung fürs Dashboard — der Kern des Geldmodells. */
 export type Auswertung = {
   /** Mein Ertrag (Posten art='umsatz'). */
