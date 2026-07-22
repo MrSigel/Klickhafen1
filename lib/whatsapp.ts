@@ -16,21 +16,21 @@ export const WHATSAPP_NUMMER_LESBAR = "+49 1556 3535989";
  */
 const NACHRICHTEN: Record<string, string> = {
   default:
-    "Hallo Klickhafen, ich habe ein Projekt im Kopf und würde es gern mit Ihnen besprechen.",
+    "Hallo Enrico, ich habe ein Projekt im Kopf und würde es gern mit Ihnen besprechen.",
   webdesign:
-    "Hallo Klickhafen, ich interessiere mich für Webdesign und würde gern über mein Projekt sprechen.",
+    "Hallo Enrico, ich interessiere mich für Webdesign und würde gern über mein Projekt sprechen.",
   webentwicklung:
-    "Hallo Klickhafen, ich interessiere mich für Webentwicklung und habe eine Anwendung im Kopf.",
+    "Hallo Enrico, ich interessiere mich für Webentwicklung und habe eine Anwendung im Kopf.",
   automationen:
-    "Hallo Klickhafen, ich interessiere mich für Automationen und möchte einen Prozess in meinem Betrieb automatisieren.",
+    "Hallo Enrico, ich möchte einen Prozess in meinem Betrieb automatisieren und würde das gern mit Ihnen besprechen.",
   "seo-aeo-geo-cro":
-    "Hallo Klickhafen, ich interessiere mich für SEO und Conversion-Optimierung meiner Website.",
+    "Hallo Enrico, ich interessiere mich für SEO und Conversion-Optimierung meiner Website.",
   funnels:
-    "Hallo Klickhafen, ich interessiere mich für einen Funnel und möchte mehr Anfragen aus meinem Traffic holen.",
+    "Hallo Enrico, ich interessiere mich für einen Funnel und möchte mehr Anfragen aus meinem Traffic holen.",
   "individuelle-loesungen":
-    "Hallo Klickhafen, ich habe eine individuelle Anforderung, für die es keine Standardlösung gibt.",
+    "Hallo Enrico, ich habe eine individuelle Anforderung, für die es keine Standardlösung gibt.",
   "baukasten-loesungen":
-    "Hallo Klickhafen, ich interessiere mich für eine Baukasten-Lösung und möchte schnell online gehen.",
+    "Hallo Enrico, ich interessiere mich für eine Baukasten-Lösung und möchte schnell online gehen.",
 };
 
 /**
