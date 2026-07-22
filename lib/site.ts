@@ -51,7 +51,7 @@ export const site = {
   },
   /** Einzugsgebiet für das LocalBusiness-Schema */
   einzugsgebiet: ["Castrop-Rauxel", "Ruhrgebiet", "Nordrhein-Westfalen", "Deutschland"],
-  email: "glowreel.enrico@gmail.com",
+  email: "kontakt@klickhafen.com",
   /** Telefon im E.164-Format — dieselbe Nummer wie WhatsApp, für Schema/tel:. */
   telefon: "+4915563535989",
 
