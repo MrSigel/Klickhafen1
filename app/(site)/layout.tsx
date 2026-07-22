@@ -2,6 +2,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { WaConversion } from "@/components/WaConversion";
+import { GoogleTag } from "@/components/analytics/GoogleTag";
+import { ConsentBanner } from "@/components/analytics/Consent";
 import {
   localBusinessSchema,
   organizationSchema,
@@ -37,6 +39,8 @@ export default function SiteLayout({
       </a>
 
       <WaConversion />
+      <GoogleTag />
+      <ConsentBanner />
 
       <Header />
       <main id="inhalt" className="flex-1">

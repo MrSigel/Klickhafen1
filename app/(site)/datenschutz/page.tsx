@@ -7,13 +7,12 @@ import { WHATSAPP_NUMMER_LESBAR } from "@/lib/whatsapp";
 /**
  * Datenschutzerklärung — beschreibt EXAKT, was diese Website tut (verifiziert):
  * Hosting bei Vercel, Server-Logs, lokal eingebettete Schriften (keine
- * Google-Verbindung), kein Kontaktformular, WhatsApp-Link, AKTUELL keine
- * Cookies und kein Tracking.
+ * Google-Fonts-Verbindung), kein Kontaktformular, WhatsApp-Link, und Google-Ads-
+ * Conversion-Tracking NUR nach Einwilligung (Consent Mode v2 + Banner).
  *
- * WICHTIG (Enrico): Sobald Google Ads / Conversion-Tracking eingebunden wird,
- * ist der Abschnitt „Analyse und Werbung" zu ersetzen UND ein Cookie-Consent-
- * Banner (TTDSG/DSGVO) einzubauen — vorher darf kein Tracking-Cookie gesetzt
- * werden. Dieser Text ist sorgfältig, ersetzt aber keine anwaltliche Prüfung.
+ * Der Google-Tag ist in components/analytics/GoogleTag.tsx (Standard „denied"),
+ * das Banner in components/analytics/Consent.tsx. Dieser Text ist sorgfältig,
+ * ersetzt aber keine anwaltliche Prüfung.
  */
 const name = `${site.person.vorname} ${site.person.nachname}`;
 
@@ -108,17 +107,36 @@ export default function DatenschutzSeite() {
         </p>
       </RechtAbschnitt>
 
-      <RechtAbschnitt ueberschrift="Cookies, Analyse und Werbung">
+      <RechtAbschnitt ueberschrift="Cookies, Analyse und Werbung (Google Ads)">
         <p>
-          Diese Website setzt derzeit keine Cookies und bindet keine Analyse-,
-          Tracking- oder Werbedienste ein. Es findet keine Reichweitenmessung und
-          kein Profiling statt.
+          Diese Website bindet den Google-Tag (gtag.js) der Google Ireland
+          Limited (Gordon House, Barrow Street, Dublin 4, Irland) ein, um den
+          Erfolg von Werbeanzeigen im Google-Ads-Netzwerk zu messen
+          (Conversion-Tracking). Dabei kann Google Cookies setzen und
+          Nutzungsdaten – einschließlich einer gekürzten IP-Adresse –
+          verarbeiten, um zu erkennen, ob ein Websitebesuch aus einer Anzeige
+          entstand und zu einer Kontaktaufnahme geführt hat.
         </p>
         <p>
-          Sollten künftig Analyse- oder Werbewerkzeuge (etwa im Zusammenhang mit
-          Online-Werbung) eingesetzt werden, geschieht dies erst nach Ihrer
-          ausdrücklichen Einwilligung über einen Cookie-Hinweis und wird an
-          dieser Stelle ergänzt.
+          Als Kontaktaufnahme gilt der Klick auf eine WhatsApp-Schaltfläche;
+          danach wird eine Bestätigungsseite („/danke“) aufgerufen, deren Aufruf
+          als Conversion gezählt wird. Inhalte Ihrer WhatsApp-Nachricht werden
+          dabei nicht verarbeitet.
+        </p>
+        <p>
+          Diese Verarbeitung erfolgt ausschließlich auf Grundlage Ihrer
+          Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Solange
+          Sie nicht einwilligen, werden über den Google Consent Mode keine für
+          Werbung erforderlichen Cookies gesetzt und Werbe-Identifikatoren werden
+          reduziert. Ihre Einwilligung ist freiwillig und jederzeit mit Wirkung
+          für die Zukunft widerrufbar – über den Link „Cookie-Einstellungen“ im
+          Seitenfuß.
+        </p>
+        <p>
+          Google verarbeitet Daten auch in den USA; der Datentransfer ist durch
+          Standardvertragsklauseln und das EU-US Data Privacy Framework
+          abgesichert. Weitere Informationen finden Sie in der
+          Datenschutzerklärung von Google.
         </p>
       </RechtAbschnitt>
 

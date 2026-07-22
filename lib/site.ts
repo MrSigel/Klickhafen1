@@ -56,6 +56,12 @@ export const site = {
   telefon: "+4915563535989",
 
   /**
+   * Google-Tag (gtag.js) für Google-Ads-Conversion-Tracking. Wird NUR nach
+   * Einwilligung aktiv (Consent Mode v2, Standard „denied"). Leer = kein Tracking.
+   */
+  googleTagId: "G-57DC8MW8DH",
+
+  /**
    * Verifizierte Profile für das sameAs-Feld (Organization/Person). Sie sind
    * das stärkste Signal, dass hinter der Marke echte, auffindbare Identitäten
    * stehen (E-E-A-T). Solange leer, wird sameAs bewusst NICHT ausgegeben —

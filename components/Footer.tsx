@@ -3,6 +3,7 @@ import { services } from "@/lib/services";
 import { site } from "@/lib/site";
 import { WHATSAPP_NUMMER_LESBAR, waLink, waZusatz } from "@/lib/whatsapp";
 import { Anker } from "./Anker";
+import { CookieEinstellungen } from "./analytics/Consent";
 import { Container } from "./ui";
 
 const hafenmeisterei = [
@@ -92,9 +93,12 @@ export function Footer() {
             © {new Date().getFullYear()} {site.name} · {site.adresse.ort},{" "}
             {site.adresse.regionKurz}
           </p>
-          <p className="font-mono text-eyebrow tracking-[0.12em] uppercase">
-            {site.domain}
-          </p>
+          <div className="flex items-center gap-5">
+            <CookieEinstellungen />
+            <p className="font-mono text-eyebrow tracking-[0.12em] uppercase">
+              {site.domain}
+            </p>
+          </div>
         </div>
       </Container>
     </footer>
