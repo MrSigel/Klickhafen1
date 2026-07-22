@@ -2,7 +2,8 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { SetupHinweis } from "@/components/admin/SetupHinweis";
-import { Karte } from "@/components/admin/formular";
+import { Karte, MiniAktion } from "@/components/admin/formular";
+import { rechnungLoeschen } from "@/lib/admin/aktionen";
 import { rechnungenLaden } from "@/lib/admin/daten";
 import { datum } from "@/lib/admin/format";
 import { aktuellerNutzer, supabaseKonfiguriert } from "@/lib/admin/supabase";
@@ -56,10 +57,13 @@ export default async function RechnungenSeite() {
         ) : (
           <ul className="flex flex-col">
             {rechnungen.map((r) => (
-              <li key={r.id} className="border-b border-line first:border-t">
+              <li
+                key={r.id}
+                className="flex items-center gap-4 border-b border-line first:border-t"
+              >
                 <Link
                   href={`/admin/rechnungen/${r.id}`}
-                  className="group flex items-center justify-between gap-4 py-3.5"
+                  className="group flex flex-1 items-center justify-between gap-4 py-3.5"
                 >
                   <div>
                     <p className="font-mono text-ink transition-colors group-hover:text-accent">
@@ -79,6 +83,10 @@ export default async function RechnungenSeite() {
                     {STATUS[r.status]}
                   </span>
                 </Link>
+                <form action={rechnungLoeschen} className="flex-none pl-2">
+                  <input type="hidden" name="id" value={r.id} />
+                  <MiniAktion gefahr>löschen</MiniAktion>
+                </form>
               </li>
             ))}
           </ul>

@@ -106,6 +106,12 @@ export default async function RechnungDetail({
         <div className="flex flex-col gap-6">
           <Karte titel="Aktionen">
             <div className="flex flex-col gap-3">
+              <Link
+                href={`/admin/rechnungen/${id}/bearbeiten`}
+                className="rounded-md border border-ink-faint px-4 py-2.5 text-center text-small text-ink transition-colors hover:border-accent hover:text-accent"
+              >
+                Rechnung bearbeiten
+              </Link>
               <a
                 href={`/admin/rechnungen/${id}/pdf`}
                 target="_blank"

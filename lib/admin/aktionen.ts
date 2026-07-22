@@ -131,26 +131,33 @@ export async function ausgabeLoeschen(fd: FormData) {
 }
 
 /* ---- Rechnungen ---- */
+
+/** Liest die frei eingegebenen Positionszeilen aus dem Editor-Formular. */
+function zeilenAusForm(fd: FormData) {
+  const bez = fd.getAll("z_bezeichnung").map(String);
+  const men = fd.getAll("z_menge").map(String);
+  const pre = fd.getAll("z_preis").map(String);
+  const zahl = (s: string) => {
+    const n = Number(String(s ?? "").replace(/\./g, "").replace(",", "."));
+    return Number.isFinite(n) ? n : 0;
+  };
+  return bez
+    .map((b, i) => ({
+      bezeichnung: b.trim(),
+      menge: zahl(men[i] ?? "1") || 1,
+      einzelpreis: zahl(pre[i] ?? "0"),
+    }))
+    .filter((z) => z.bezeichnung.length > 0);
+}
+
 export async function rechnungAnlegen(fd: FormData) {
   const supabase = await client();
-  const projektId = str(fd, "projekt_id");
-
-  // Kunde aus dem Projekt ziehen, damit die Rechnungsanschrift stimmt.
-  let kundeId: string | null = null;
-  if (projektId) {
-    const { data } = await supabase
-      .from("projekte")
-      .select("kunde_id")
-      .eq("id", projektId)
-      .single();
-    kundeId = data?.kunde_id ?? null;
-  }
 
   const { data: rechnung } = await supabase
     .from("rechnungen")
     .insert({
-      projekt_id: projektId,
-      kunde_id: kundeId,
+      projekt_id: str(fd, "projekt_id"),
+      kunde_id: str(fd, "kunde_id"),
       nummer: pflichtStr(fd, "nummer"),
       datum: str(fd, "datum") ?? undefined,
       faellig: str(fd, "faellig"),
@@ -160,28 +167,56 @@ export async function rechnungAnlegen(fd: FormData) {
     .select("id")
     .single();
 
-  // Ausgewählte Einnahme-Posten des Projekts als Rechnungszeilen übernehmen.
-  const postenIds = fd.getAll("posten").map(String);
-  if (rechnung?.id && postenIds.length && projektId) {
-    const { data: posten } = await supabase
-      .from("posten")
-      .select("id, bezeichnung, betrag")
-      .in("id", postenIds);
-    if (posten?.length) {
-      await supabase.from("rechnung_posten").insert(
-        posten.map((p, i) => ({
-          rechnung_id: rechnung.id,
-          bezeichnung: p.bezeichnung,
-          menge: 1,
-          einzelpreis: p.betrag,
-          position: i,
-        })),
-      );
-    }
+  const zeilen = zeilenAusForm(fd);
+  if (rechnung?.id && zeilen.length) {
+    await supabase.from("rechnung_posten").insert(
+      zeilen.map((z, i) => ({
+        rechnung_id: rechnung.id,
+        bezeichnung: z.bezeichnung,
+        menge: z.menge,
+        einzelpreis: z.einzelpreis,
+        position: i,
+      })),
+    );
   }
 
   revalidatePath("/admin/rechnungen");
   if (rechnung?.id) redirect(`/admin/rechnungen/${rechnung.id}`);
+}
+
+export async function rechnungAktualisieren(fd: FormData) {
+  const supabase = await client();
+  const id = pflichtStr(fd, "id");
+
+  await supabase
+    .from("rechnungen")
+    .update({
+      kunde_id: str(fd, "kunde_id"),
+      nummer: pflichtStr(fd, "nummer"),
+      datum: str(fd, "datum") ?? undefined,
+      faellig: str(fd, "faellig"),
+      notiz: str(fd, "notiz"),
+    })
+    .eq("id", id);
+
+  // Zeilen komplett ersetzen (einfacher und robuster als Diffen).
+  await supabase.from("rechnung_posten").delete().eq("rechnung_id", id);
+  const zeilen = zeilenAusForm(fd);
+  if (zeilen.length) {
+    await supabase.from("rechnung_posten").insert(
+      zeilen.map((z, i) => ({
+        rechnung_id: id,
+        bezeichnung: z.bezeichnung,
+        menge: z.menge,
+        einzelpreis: z.einzelpreis,
+        position: i,
+      })),
+    );
+  }
+
+  revalidatePath(`/admin/rechnungen/${id}`);
+  revalidatePath("/admin/rechnungen");
+  redirect(`/admin/rechnungen/${id}`);
 }
 
 export async function rechnungStatus(fd: FormData) {
