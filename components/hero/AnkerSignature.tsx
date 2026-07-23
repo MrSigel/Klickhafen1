@@ -102,7 +102,7 @@ export function AnkerSignature() {
     // Atmosphäre liefern, aber nicht das Verkaufsargument verdrängen.
     <div
       ref={huelle}
-      className="relative aspect-square w-full max-w-[17rem] sm:max-w-[24rem] lg:max-w-[32rem] [contain:layout_paint]"
+      className="relative aspect-square w-full max-w-[13rem] sm:max-w-[24rem] lg:max-w-[32rem] [contain:layout_paint]"
     >
       {laden ? <AnkerScene aktiv={imBild} /> : <AnkerFallback />}
     </div>

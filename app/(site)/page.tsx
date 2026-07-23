@@ -73,7 +73,10 @@ export default function Startseite() {
               </div>
             </div>
 
-            <div className="order-3 flex justify-center lg:order-none lg:col-span-5 lg:justify-end">
+            {/* Auf dem Handy nach OBEN: der (schwingende) Anker gibt dem Hero
+                sofort Leben, statt als Textwand zu starten. Ab lg wieder rechts
+                neben der Überschrift. */}
+            <div className="order-first flex justify-center lg:order-none lg:col-span-5 lg:justify-end">
               <AnkerSignature />
             </div>
 
