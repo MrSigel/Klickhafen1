@@ -43,6 +43,14 @@ const NACHRICHTEN: Record<string, string> = {
     "Hallo Enrico, ich interessiere mich für TikTok Ads und möchte dort Reichweite aufbauen.",
   "linkedin-ads":
     "Hallo Enrico, ich interessiere mich für LinkedIn Ads und möchte gezielt B2B-Entscheider erreichen.",
+  "microsoft-ads":
+    "Hallo Enrico, ich interessiere mich für Microsoft Ads (Bing) und möchte einen günstigeren Suchkanal nutzen.",
+  "pinterest-ads":
+    "Hallo Enrico, ich interessiere mich für Pinterest Ads und möchte visuell neue Kunden gewinnen.",
+  "snapchat-ads":
+    "Hallo Enrico, ich interessiere mich für Snapchat Ads und möchte eine junge Zielgruppe erreichen.",
+  "x-ads":
+    "Hallo Enrico, ich interessiere mich für X (Twitter) Ads und möchte dort Reichweite aufbauen.",
 };
 
 /**

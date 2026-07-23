@@ -1173,6 +1173,342 @@ export const services: Service[] = [
     ],
     related: ["google-ads", "funnels", "facebook-ads"],
   },
+  {
+    slug: "microsoft-ads",
+    kategorie: "ads",
+    name: "Microsoft Ads",
+    h1: "Microsoft Ads — Suchanzeigen abseits von Google, oft günstiger",
+    eyebrow: "Werbeanzeigen",
+    title: "Microsoft Ads (Bing) Betreuung aus Castrop-Rauxel",
+    description:
+      "Microsoft Advertising (Bing, Yahoo, DuckDuckGo): Suchanzeigen mit oft niedrigeren Klickpreisen und kaufkräftiger Zielgruppe — Kampagnen aus Google Ads übernehmbar. Ihr Konto.",
+    claim:
+      "Dieselbe Kaufabsicht wie bei Google — auf Bing oft günstiger und mit weniger Wettbewerb.",
+    intro:
+      "Microsoft Advertising spielt Ihre Suchanzeigen auf Bing, Yahoo und DuckDuckGo aus. Die Reichweite ist kleiner als bei Google, die Klickpreise dafür oft niedriger und die Zielgruppe kaufkräftig. Für viele Betriebe ein unterschätzter Zusatzkanal.",
+    problem: {
+      heading: "Warum Microsoft Ads oft übersehen wird",
+      body: "Weil alle nur an Google denken — und dabei einen günstigeren Kanal liegen lassen.",
+      punkte: [
+        "Der Kanal wird gar nicht erst genutzt, obwohl die Zielgruppe dort kauft.",
+        "Google-Kampagnen werden unverändert kopiert, statt an Bing angepasst.",
+        "Kein Conversion-Tracking, also kein Vergleich, welcher Kanal günstiger liefert.",
+        "Das Werbekonto liegt bei der Agentur.",
+      ],
+    },
+    loesung: {
+      heading: "Wie ich Microsoft Ads aufsetze",
+      body: "Bestehende Google-Kampagnen als Basis, sauber an Bing angepasst, mit eigener Messung.",
+      punkte: [
+        "Import Ihrer Google-Ads-Kampagnen als Startpunkt — kein Aufbau bei null.",
+        "Anpassung an Bing: eigene Gebote, eigene Ausschlussliste, eigene Zielgruppe.",
+        "Conversion-Tracking, damit Sie Bing und Google fair vergleichen können.",
+        "Ihr eigenes Microsoft-Advertising-Konto, volle Einsicht.",
+      ],
+    },
+    ablauf: [
+      {
+        titel: "Peilung",
+        body: "Wir prüfen, ob sich der Zusatzkanal für Ihre Branche und Region rechnet.",
+      },
+      {
+        titel: "Kurs setzen",
+        body: "Import der Google-Kampagnen, Anpassung an Bing und das Conversion-Tracking stehen.",
+      },
+      {
+        titel: "Ausrüsten",
+        body: "Kampagnen gehen live, abgestimmt auf dieselbe Landingpage wie bei Google.",
+      },
+      {
+        titel: "Auslaufen",
+        body: "Nach Kosten pro Anfrage gegen Google vergleichen und Budget dorthin lenken, wo es am besten arbeitet.",
+      },
+    ],
+    ergebnis: {
+      heading: "Was danach anders ist",
+      body: "Zusätzliche Anfragen aus einem oft günstigeren Kanal — ohne großen Mehraufwand.",
+      punkte: [
+        "Zusätzliche Anfragen aus einem oft günstigeren Kanal.",
+        "Klarer Vergleich, wo Ihr Budget am besten arbeitet.",
+        "Konto und Daten gehören Ihnen.",
+      ],
+    },
+    faq: [
+      {
+        frage: "Lohnt sich Bing/Microsoft Ads neben Google?",
+        antwort:
+          "Oft ja, als Ergänzung. Die Reichweite ist kleiner, aber die Klickpreise sind häufig niedriger und der Wettbewerb geringer. Weil sich bestehende Google-Kampagnen übernehmen lassen, ist der Aufwand für den Zusatzkanal klein. Ob es sich für Ihre Branche rechnet, prüfen wir vorher.",
+      },
+      {
+        frage: "Was kostet Microsoft Ads?",
+        antwort:
+          "Wie bei Google: das Werbebudget geht an Microsoft und ist Ihr Geld, mein Honorar ist davon getrennt. Wegen der oft niedrigeren Klickpreise reicht hier häufig ein kleineres Startbudget.",
+      },
+      {
+        frage: "Muss ich alles neu aufbauen?",
+        antwort:
+          "Nein. In den meisten Fällen übernehme ich Ihre bestehenden Google-Ads-Kampagnen als Basis und passe sie an — das spart Zeit und Geld.",
+      },
+      {
+        frage: "Gehört mir das Konto?",
+        antwort:
+          "Ja. Alles läuft in Ihrem eigenen Microsoft-Advertising-Konto; Kampagnen und Daten bleiben bei Ihnen.",
+      },
+    ],
+    related: ["google-ads", "funnels", "seo-aeo-geo-cro"],
+  },
+  {
+    slug: "pinterest-ads",
+    kategorie: "ads",
+    name: "Pinterest Ads",
+    h1: "Pinterest Ads — Werbung, die als Inspiration ankommt",
+    eyebrow: "Werbeanzeigen",
+    title: "Pinterest Ads Betreuung aus Castrop-Rauxel",
+    description:
+      "Pinterest Ads für visuelle Angebote mit Kaufabsicht: Wohnen, Mode, DIY, Food, Hochzeit. Pins wirken lange, die Zielgruppe plant Käufe. Messung bis zur Anfrage, Ihr Konto.",
+    claim:
+      "Auf Pinterest suchen Menschen aktiv nach Ideen — und planen dabei echte Käufe.",
+    intro:
+      "Pinterest ist eine visuelle Suchmaschine, keine klassische Social-App. Menschen suchen dort gezielt nach Inspiration und planen Anschaffungen. Für visuelle Angebote — Wohnen, Mode, DIY, Food, Hochzeit — ist das ein Kanal mit echter Kaufabsicht.",
+    problem: {
+      heading: "Warum Pinterest-Werbung oft ungenutzt bleibt",
+      body: "Weil es als Nischen-App abgetan wird, statt als visuelle Suchmaschine mit Kaufabsicht.",
+      punkte: [
+        "Der Kanal wird ignoriert, obwohl die Zielgruppe dort Käufe plant.",
+        "Anzeigen wirken wie Werbung statt wie hilfreiche Inspiration.",
+        "Kein Bezug zwischen schönem Pin und echter Anfrage.",
+        "Keine Messung, welches Motiv wirklich trägt.",
+      ],
+    },
+    loesung: {
+      heading: "Wie ich Pinterest-Ads baue",
+      body: "Anzeigen, die als Inspiration durchgehen, mit klarem Weg von der Idee zur Anfrage.",
+      punkte: [
+        "Pins, die aussehen wie gesuchte Inspiration, nicht wie Werbung.",
+        "Ausrichtung auf konkrete Such- und Planungsabsicht, nicht auf Zufallsreichweite.",
+        "Ein klarer Weg vom Pin auf Ihre Seite und ins Gespräch.",
+        "Messung bis zur Anfrage, damit klar wird, welches Motiv trägt.",
+      ],
+    },
+    ablauf: [
+      {
+        titel: "Peilung",
+        body: "Wir klären, ob Ihr Angebot visuell zu Pinterest passt und welche Suchabsicht Sie treffen wollen.",
+      },
+      {
+        titel: "Kurs setzen",
+        body: "Zielgruppen, Motive und die Messung stehen, bevor Budget fließt.",
+      },
+      {
+        titel: "Ausrüsten",
+        body: "Kampagnen gehen live — mit Pins, die als Inspiration angenommen werden.",
+      },
+      {
+        titel: "Auslaufen",
+        body: "Motive nach Ergebnis auswerten, das stärkste skalieren.",
+      },
+    ],
+    ergebnis: {
+      heading: "Was danach anders ist",
+      body: "Reichweite bei Menschen mit konkreter Planungs- und Kaufabsicht.",
+      punkte: [
+        "Reichweite bei Menschen mit konkreter Kaufabsicht.",
+        "Anzeigen, die als Inspiration angenommen werden.",
+        "Pins wirken lange — nicht nur am Schalttag.",
+      ],
+    },
+    faq: [
+      {
+        frage: "Für wen lohnt sich Pinterest?",
+        antwort:
+          "Vor allem für visuelle Angebote: Wohnen und Einrichtung, Mode, Handwerk, Food, Hochzeit, DIY, Beauty. Wenn sich Ihr Angebot in einem schönen Bild zeigen lässt und Menschen es planen, passt Pinterest. Ob das auf Sie zutrifft, klären wir ehrlich vorab.",
+      },
+      {
+        frage: "Was kostet Pinterest-Werbung?",
+        antwort:
+          "Die Reichweite ist vergleichsweise günstig; das Werbebudget geht an Pinterest und ist Ihr Geld, mein Honorar ist davon getrennt. Das Startbudget legen wir vorher fest.",
+      },
+      {
+        frage: "Was ist der Unterschied zu Instagram?",
+        antwort:
+          "Instagram ist Feed und Community, Pinterest ist Suche und Planung. Auf Pinterest suchen Menschen aktiv nach Ideen für spätere Käufe — die Kaufabsicht ist oft konkreter, und ein Pin wirkt deutlich länger.",
+      },
+      {
+        frage: "Gehört mir das Konto?",
+        antwort:
+          "Ja. Alles läuft über Ihr eigenes Pinterest-Business-Konto; Kampagnen und Daten bleiben bei Ihnen.",
+      },
+    ],
+    related: ["instagram-ads", "funnels", "facebook-ads"],
+  },
+  {
+    slug: "snapchat-ads",
+    kategorie: "ads",
+    name: "Snapchat Ads",
+    h1: "Snapchat Ads — junge Reichweite, günstig und direkt",
+    eyebrow: "Werbeanzeigen",
+    title: "Snapchat Ads Betreuung aus Castrop-Rauxel",
+    description:
+      "Snapchat Ads für junge Zielgruppen: hochformatiges Video, günstige Reichweite, direkte Aktionen. Nativ gedacht, gemessen bis zur Anfrage. Konto und Daten gehören Ihnen.",
+    claim:
+      "Snapchat erreicht eine junge Zielgruppe direkt — mit hochformatigem Video, das nicht nach Werbung aussehen darf.",
+    intro:
+      "Snapchat ist bei einer jungen Zielgruppe fest im Alltag und bietet günstige Reichweite mit hochformatigem Video. Wie bei TikTok gilt: Die Anzeige muss sich nativ anfühlen, nicht wie ein Werbespot.",
+    problem: {
+      heading: "Warum Snapchat-Anzeigen oft floppen",
+      body: "Weil sie wie klassische Werbung wirken und die junge Zielgruppe sofort abspringt.",
+      punkte: [
+        "Anzeigen wirken wie Fernsehwerbung — auf Snapchat sofort weggetippt.",
+        "Falsches Format: quer statt hochkant, langsam statt sofort.",
+        "Kein klarer nächster Schritt.",
+        "Keine Messung, ob aus Reichweite Anfragen werden.",
+      ],
+    },
+    loesung: {
+      heading: "Wie ich Snapchat-Ads baue",
+      body: "Hochformatiges, natives Video mit sofortiger Aussage und klarem nächsten Schritt.",
+      punkte: [
+        "Hochkant und nativ — die Anzeige fügt sich in die App ein.",
+        "Aussage in der ersten Sekunde, bevor weggetippt wird.",
+        "Ein eindeutiger nächster Schritt, direkt ins Gespräch.",
+        "Messung bis zur Anfrage, nicht nur bis zum Aufruf.",
+      ],
+    },
+    ablauf: [
+      {
+        titel: "Peilung",
+        body: "Wir klären ehrlich, ob Ihre Zielgruppe auf Snapchat unterwegs ist. Wenn nicht, sparen wir das Budget.",
+      },
+      {
+        titel: "Kurs setzen",
+        body: "Zielgruppen, Format und Messung stehen, bevor Budget fließt.",
+      },
+      {
+        titel: "Ausrüsten",
+        body: "Kampagnen gehen live — mit Videos, die als Inhalt durchgehen.",
+      },
+      {
+        titel: "Auslaufen",
+        body: "Nach Ergebnis auswerten, das stärkste Video skalieren.",
+      },
+    ],
+    ergebnis: {
+      heading: "Was danach anders ist",
+      body: "Günstige Reichweite bei einer jungen Zielgruppe — mit klarer Messung.",
+      punkte: [
+        "Günstige Reichweite bei einer jungen Zielgruppe.",
+        "Anzeigen, die als Inhalt durchgehen.",
+        "Sie sehen, was ein Ergebnis kostet.",
+      ],
+    },
+    faq: [
+      {
+        frage: "Ist Snapchat nur für Teenager?",
+        antwort:
+          "Der Schwerpunkt liegt bei einer jüngeren Zielgruppe, aber die Nutzerschaft ist breiter als ihr Ruf. Ob Snapchat zu Ihren Kunden passt, klären wir ehrlich in der Peilung — wenn nicht, sage ich das.",
+      },
+      {
+        frage: "Was kostet Snapchat-Werbung?",
+        antwort:
+          "Die Reichweite ist vergleichsweise günstig; das Werbebudget geht an Snap und ist Ihr Geld, mein Honorar ist davon getrennt. Das Startbudget legen wir vorher fest.",
+      },
+      {
+        frage: "Brauche ich aufwändige Videos?",
+        antwort:
+          "Nein. Authentisches, hochformatiges Video schlägt Hochglanz. Wichtig sind ein sofortiger Einstieg, Klarheit und ein nächster Schritt.",
+      },
+      {
+        frage: "Gehört mir das Konto?",
+        antwort:
+          "Ja. Alles läuft über Ihr eigenes Snapchat-Ads-Konto; Kampagnen und Daten bleiben bei Ihnen.",
+      },
+    ],
+    related: ["tiktok-ads", "instagram-ads", "funnels"],
+  },
+  {
+    slug: "x-ads",
+    kategorie: "ads",
+    name: "X (Twitter) Ads",
+    h1: "X (Twitter) Ads — Reichweite in Echtzeit und bei Themen",
+    eyebrow: "Werbeanzeigen",
+    title: "X (Twitter) Ads Betreuung aus Castrop-Rauxel",
+    description:
+      "X (Twitter) Ads für Reichweite in Echtzeit: Ausrichtung nach Themen, Interessen und Konversationen. Gut für Tech, B2B und öffentliche Aufmerksamkeit. Ihr Konto, klare Messung.",
+    claim:
+      "X lebt von Echtzeit und Themen — ideal, um dort aufzutauchen, wo gerade über Ihre Branche gesprochen wird.",
+    intro:
+      "X (früher Twitter) ist der Kanal für Echtzeit, News und Themen. Wer bei bestimmten Debatten, Interessen oder einem technik- und geschäftsaffinen Publikum sichtbar sein will, findet hier eine präzise thematische Ausrichtung.",
+    problem: {
+      heading: "Warum X-Kampagnen oft ins Leere laufen",
+      body: "Weil die thematische Ausrichtung, die X stark macht, nicht genutzt wird.",
+      punkte: [
+        "Zu breite Ausrichtung, statt an Themen und Konversationen anzudocken.",
+        "Die Anzeige passt nicht zum schnellen, textnahen Umfeld.",
+        "Kein klarer nächster Schritt aus dem Feed heraus.",
+        "Kosten pro Ergebnis werden nicht gemessen.",
+      ],
+    },
+    loesung: {
+      heading: "Wie ich X-Ads aufsetze",
+      body: "Ausrichtung nach Themen und Interessen, mit einer Botschaft, die ins Umfeld passt.",
+      punkte: [
+        "Ausrichtung nach Themen, Interessen und relevanten Konversationen.",
+        "Botschaften, die zum schnellen, direkten Ton von X passen.",
+        "Ein klarer nächster Schritt aus dem Feed auf Ihre Seite.",
+        "Messung bis zur Anfrage, damit klar wird, was trägt.",
+      ],
+    },
+    ablauf: [
+      {
+        titel: "Peilung",
+        body: "Wir klären ehrlich, ob Ihr Publikum auf X unterwegs ist und zu welchen Themen Sie andocken.",
+      },
+      {
+        titel: "Kurs setzen",
+        body: "Themen, Zielgruppen, Botschaft und Messung stehen, bevor Budget fließt.",
+      },
+      {
+        titel: "Ausrüsten",
+        body: "Kampagnen gehen live, abgestimmt auf einen klaren nächsten Schritt.",
+      },
+      {
+        titel: "Auslaufen",
+        body: "Nach Kosten pro Ergebnis auswerten und nachschärfen.",
+      },
+    ],
+    ergebnis: {
+      heading: "Was danach anders ist",
+      body: "Sichtbarkeit genau dort, wo über Ihr Thema gesprochen wird.",
+      punkte: [
+        "Sichtbarkeit dort, wo über Ihr Thema gesprochen wird.",
+        "Reichweite bei einem geschäfts- und technikaffinen Publikum.",
+        "Konto und Daten gehören Ihnen.",
+      ],
+    },
+    faq: [
+      {
+        frage: "Für wen lohnt sich X (Twitter)?",
+        antwort:
+          "Vor allem für Tech, B2B, Medien, öffentliche Themen und alles, wo Echtzeit und Debatte eine Rolle spielen. Wenn Ihr Publikum eher auf visuellen Plattformen unterwegs ist, passen Instagram, TikTok oder Pinterest besser — das sage ich ehrlich.",
+      },
+      {
+        frage: "Was kostet X-Werbung?",
+        antwort:
+          "Das Werbebudget geht an X und ist Ihr Geld, mein Honorar ist davon getrennt. Das Startbudget richtet sich nach Ziel und Zielgruppe und wird vorher festgelegt.",
+      },
+      {
+        frage: "Ist die Plattform noch relevant für Werbung?",
+        antwort:
+          "Für bestimmte Zielgruppen ja, für andere weniger — die Nutzerschaft hat sich verschoben. Ob X für Ihren Fall sinnvoll ist, prüfe ich ehrlich vorab, statt Budget auf Verdacht zu verbrennen.",
+      },
+      {
+        frage: "Gehört mir das Konto?",
+        antwort:
+          "Ja. Alles läuft über Ihr eigenes X-Ads-Konto; Kampagnen und Daten bleiben bei Ihnen.",
+      },
+    ],
+    related: ["linkedin-ads", "google-ads", "funnels"],
+  },
 ];
 
 /** Nachschlagen per Slug — gibt undefined zurück, wenn es die Leistung nicht gibt. */
