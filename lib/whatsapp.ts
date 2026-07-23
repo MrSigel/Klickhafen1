@@ -31,6 +31,18 @@ const NACHRICHTEN: Record<string, string> = {
     "Hallo Enrico, ich habe eine individuelle Anforderung, für die es keine Standardlösung gibt.",
   "baukasten-loesungen":
     "Hallo Enrico, ich interessiere mich für eine Baukasten-Lösung und möchte schnell online gehen.",
+  "google-ads":
+    "Hallo Enrico, ich interessiere mich für Google Ads und möchte mehr Anfragen über die Suche gewinnen.",
+  "youtube-ads":
+    "Hallo Enrico, ich interessiere mich für YouTube Ads und möchte mit Video Reichweite aufbauen.",
+  "facebook-ads":
+    "Hallo Enrico, ich interessiere mich für Facebook Ads und möchte meine Zielgruppe gezielt erreichen.",
+  "instagram-ads":
+    "Hallo Enrico, ich interessiere mich für Instagram Ads und möchte visuell neue Kunden gewinnen.",
+  "tiktok-ads":
+    "Hallo Enrico, ich interessiere mich für TikTok Ads und möchte dort Reichweite aufbauen.",
+  "linkedin-ads":
+    "Hallo Enrico, ich interessiere mich für LinkedIn Ads und möchte gezielt B2B-Entscheider erreichen.",
 };
 
 /**

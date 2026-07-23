@@ -14,9 +14,16 @@ export type Faq = {
   antwort: string;
 };
 
+export type Servicekategorie = "kern" | "ads";
+
 export type Service = {
   /** URL-Segment unter /leistungen/ und Schlüssel für lib/whatsapp.ts */
   slug: string;
+  /**
+   * Gruppe auf der Übersicht. Ohne Angabe = "kern" (die sieben Kernleistungen).
+   * "ads" bündelt die Werbeanzeigen-Plattformen als eigene Gruppe.
+   */
+  kategorie?: Servicekategorie;
   /** Kurzform für Navigation, Footer, Breadcrumb */
   name: string;
   /** Eigene H1 der Detailseite — bewusst nicht identisch mit `name` */
@@ -650,6 +657,522 @@ export const services: Service[] = [
     ],
     related: ["webdesign", "webentwicklung", "individuelle-loesungen"],
   },
+
+  /* ============================================================
+     Werbeanzeigen (Ads) — eigene Gruppe. Jede Plattform eine eigene,
+     vollständige Leistungsseite. Durchgängige, ehrliche Klammer: Werbebudget
+     ist Ihr Geld (getrennt vom Honorar), das Werbekonto gehört Ihnen, keine
+     Garantien auf Platzierungen, gemessen wird bis zur Anfrage.
+     ============================================================ */
+  {
+    slug: "google-ads",
+    kategorie: "ads",
+    name: "Google Ads",
+    h1: "Google Ads, die Anfragen bringen — nicht nur Klicks",
+    eyebrow: "Werbeanzeigen",
+    title: "Google Ads Betreuung aus Castrop-Rauxel",
+    description:
+      "Google Ads, die auf Anfragen optimieren statt auf Klicks: kaufabsicht-starke Suchbegriffe, saubere Kontostruktur, echtes Conversion-Tracking. Ihr Konto gehört Ihnen.",
+    claim:
+      "Wer bei Google sucht, will kaufen — ich hole genau diese Nachfrage ab, messbar bis zur Anfrage.",
+    intro:
+      "Google Ads ist der schnellste Weg, vor Menschen zu stehen, die Ihr Angebot gerade aktiv suchen. Ohne saubere Struktur und ehrliche Messung wird daraus aber ein Budgetverbrenner. Genau da setze ich an.",
+    problem: {
+      heading: "Warum die meisten Google-Ads-Konten Geld verbrennen",
+      body: "Es liegt selten an der Anzeige, sondern an dem, was drumherum fehlt: die falschen Suchbegriffe, kein Ziel, keine Messung.",
+      punkte: [
+        "Das Budget läuft auf breite Begriffe ohne Kaufabsicht — viele Klicks, keine Anfragen.",
+        "Es wird auf Klicks optimiert statt auf das, was zählt: die Kontaktaufnahme.",
+        "Auszuschließende Suchbegriffe fehlen, also zahlen Sie für „kostenlos“ und „selber machen“.",
+        "Das Werbekonto gehört der Agentur — bei einer Trennung ist alles weg.",
+      ],
+    },
+    loesung: {
+      heading: "Wie ich Google Ads aufsetze",
+      body: "Zuerst das Ziel und die Messung, dann erst die Anzeige. Ich baue das Konto so, dass jeder Euro auf Menschen mit echter Kaufabsicht zeigt.",
+      punkte: [
+        "Suchbegriffe mit Kaufabsicht („… erstellen lassen“, „… Agentur“) statt breiter Streuung.",
+        "Conversion-Tracking auf die echte Anfrage — WhatsApp-Klick und Anruf, nicht nur Seitenaufrufe.",
+        "Konsequente Ausschlussliste, damit Streuverkehr gar nicht erst kostet.",
+        "Ihr eigenes Werbekonto, volle Einsicht, keine Knebelverträge.",
+      ],
+    },
+    ablauf: [
+      {
+        titel: "Peilung",
+        body: "Wir klären Angebot, Zielgruppe und was eine Anfrage für Sie wert sein darf. Ohne diese Zahl ist jede Optimierung geraten.",
+      },
+      {
+        titel: "Kurs setzen",
+        body: "Kontostruktur, Suchbegriffe, Anzeigentexte und das Conversion-Tracking stehen — bevor der erste Euro läuft.",
+      },
+      {
+        titel: "Ausrüsten",
+        body: "Die Kampagnen gehen live, abgestimmt auf eine Landingpage, die das Anzeigenversprechen einlöst.",
+      },
+      {
+        titel: "Auslaufen",
+        body: "Messen gegen die Anfragen, Streuverkehr kappen, nachschärfen. Sie sehen, was eine Anfrage kostet — nicht nur, was ein Klick kostet.",
+      },
+    ],
+    ergebnis: {
+      heading: "Was danach anders ist",
+      body: "Aus demselben Budget entstehen mehr echte Anfragen — nachweisbar.",
+      punkte: [
+        "Sie zahlen für Kaufabsicht, nicht für Neugier.",
+        "Kosten pro Anfrage werden sichtbar und steuerbar.",
+        "Das Konto und alle Daten gehören Ihnen.",
+      ],
+    },
+    faq: [
+      {
+        frage: "Was kostet Google Ads?",
+        antwort:
+          "Zwei Posten: Ihr Werbebudget (geht direkt an Google, ist Ihr Geld) und mein Honorar für Einrichtung und Betreuung. Beides trenne ich sauber und transparent. Das sinnvolle Mindestbudget hängt von Ihrer Branche und Region ab — das rechnen wir vor dem Start gemeinsam durch.",
+      },
+      {
+        frage: "Wie schnell sehe ich Ergebnisse?",
+        antwort:
+          "Anzeigen laufen innerhalb von Tagen. Erste Anfragen kommen oft in der ersten Woche, aber die Kampagne braucht ein bis drei Wochen Daten, bevor sie stabil auf Anfragen optimiert. Wer sofortige Wunder verspricht, verkauft Zufall.",
+      },
+      {
+        frage: "Garantieren Sie Platz 1 bei Google?",
+        antwort:
+          "Nein, und das kann niemand seriös. Die Anzeigenposition entscheidet eine Echtzeit-Auktion aus Gebot und Qualität. Was ich zusage, ist die saubere Umsetzung der Faktoren, die nachweislich wirken — und eine ehrliche Messung.",
+      },
+      {
+        frage: "Gehört mir das Werbekonto?",
+        antwort:
+          "Ja. Ich richte alles in Ihrem eigenen Google-Ads-Konto ein. Sie behalten volle Einsicht, und bei einer Trennung bleiben Konto, Kampagnen und Daten bei Ihnen.",
+      },
+      {
+        frage: "Brauche ich eine eigene Landingpage?",
+        antwort:
+          "Meistens ja. Bezahlter Traffic auf eine allgemeine Startseite verschenkt Geld. Wenn die Zielseite nicht sitzt, sprechen wir darüber, bevor wir Budget verbrennen — Landingpage und Anzeige gehören zusammen.",
+      },
+    ],
+    related: ["youtube-ads", "funnels", "seo-aeo-geo-cro"],
+  },
+  {
+    slug: "youtube-ads",
+    kategorie: "ads",
+    name: "YouTube Ads",
+    h1: "YouTube Ads — Bewegtbild, das gesehen und gemessen wird",
+    eyebrow: "Werbeanzeigen",
+    title: "YouTube Ads Betreuung aus Castrop-Rauxel",
+    description:
+      "YouTube Ads mit klarer Zielgruppe und Messung: Reichweite und Wiedererkennung günstig aufbauen, Interessenten mit Video zurückholen — bis zur Anfrage gedacht.",
+    claim:
+      "Video baut Vertrauen wie kein anderes Format — auf YouTube günstig, mit präziser Zielgruppe und echter Messung.",
+    intro:
+      "YouTube ist die zweitgrößte Suchmaschine der Welt und der günstigste Weg zu Reichweite mit Bewegtbild. Der Fehler der meisten: ein Video schalten und hoffen. Ich baue YouTube-Ads mit Ziel, Zielgruppe und Messung.",
+    problem: {
+      heading: "Woran YouTube-Kampagnen scheitern",
+      body: "Nicht am Budget, sondern an fehlender Struktur und der Annahme, ein schönes Video reiche.",
+      punkte: [
+        "Die ersten fünf Sekunden ziehen nicht — der Zuschauer skippt, bevor die Botschaft ankommt.",
+        "Kein Plan, ob es um Reichweite, Interessenten oder Anfragen geht.",
+        "Keine Zielgruppen, keine Retargeting-Kette — jeder Euro streut ins Blaue.",
+        "Es wird nicht gemessen, ob aus Views je eine Anfrage wird.",
+      ],
+    },
+    loesung: {
+      heading: "Wie ich YouTube-Ads baue",
+      body: "Vom Ziel her: erst klären, was das Video leisten soll, dann Zielgruppe, Hook und Messung.",
+      punkte: [
+        "Hook in den ersten Sekunden — die Botschaft steht, bevor der Skip-Button lockt.",
+        "Präzise Zielgruppen: Interessen, Suchverhalten, Zuschauer bestimmter Kanäle.",
+        "Retargeting: Wer Ihre Seite besucht hat, sieht das passende Video erneut.",
+        "Messung bis zur Anfrage, nicht nur bis zum View.",
+      ],
+    },
+    ablauf: [
+      {
+        titel: "Peilung",
+        body: "Wir legen fest, was die Kampagne leisten soll — Reichweite, Interessenten oder direkte Anfragen. Das bestimmt alles Weitere.",
+      },
+      {
+        titel: "Kurs setzen",
+        body: "Zielgruppen, Hook-Konzept und Messpunkte stehen, bevor Budget fließt.",
+      },
+      {
+        titel: "Ausrüsten",
+        body: "Kampagnen und Retargeting gehen live, abgestimmt auf einen klaren nächsten Schritt.",
+      },
+      {
+        titel: "Auslaufen",
+        body: "Auswerten nach Kosten pro Ergebnis, nicht pro View — und nachschärfen.",
+      },
+    ],
+    ergebnis: {
+      heading: "Was danach anders ist",
+      body: "Reichweite, die sich rechnet, statt Views, die nur eine Statistik füllen.",
+      punkte: [
+        "Günstige Reichweite bei genau Ihrer Zielgruppe.",
+        "Interessenten kehren über Retargeting zurück.",
+        "Sie sehen, was ein Ergebnis kostet — nicht nur, was ein View kostet.",
+      ],
+    },
+    faq: [
+      {
+        frage: "Brauche ich ein aufwändig produziertes Video?",
+        antwort:
+          "Nein. Auf YouTube schlägt Klarheit Hochglanz. Wichtiger als Filmqualität sind ein starker Hook, eine klare Aussage und ein eindeutiger nächster Schritt. Wenn Sie noch kein Video haben, besprechen wir, was für Ihren Fall wirklich nötig ist.",
+      },
+      {
+        frage: "Was kostet YouTube-Werbung?",
+        antwort:
+          "Views sind vergleichsweise günstig; das Werbebudget geht an Google und ist Ihr Geld, mein Honorar für Einrichtung und Betreuung ist davon getrennt. Das sinnvolle Startbudget hängt vom Ziel ab und wird vorher festgelegt.",
+      },
+      {
+        frage: "Lohnt sich YouTube auch für kleine Betriebe?",
+        antwort:
+          "Ja, besonders für Bekanntheit und Retargeting. Gerade lokal ist die Zielgruppenschärfe ein Vorteil: Sie zahlen für Reichweite in Ihrer Region, statt bundesweit zu streuen.",
+      },
+      {
+        frage: "Gehört mir das Konto?",
+        antwort:
+          "Ja. YouTube-Ads laufen über Ihr eigenes Google-Ads-Konto. Kampagnen, Videos und Daten bleiben bei Ihnen.",
+      },
+    ],
+    related: ["google-ads", "funnels", "instagram-ads"],
+  },
+  {
+    slug: "facebook-ads",
+    kategorie: "ads",
+    name: "Facebook Ads",
+    h1: "Facebook Ads — Reichweite mit Zielgruppe, nicht mit Gießkanne",
+    eyebrow: "Werbeanzeigen",
+    title: "Facebook Ads (Meta) Betreuung aus Castrop-Rauxel",
+    description:
+      "Facebook Ads über den Meta-Werbeanzeigenmanager: präzises Interessen- und Regions-Targeting, saubere Messung, Ihr Werbekonto. Anfragen statt Reichweite ohne Wirkung.",
+    claim:
+      "Facebook erreicht fast jede Zielgruppe — der Unterschied liegt darin, wen Sie ansprechen und was nach dem Klick passiert.",
+    intro:
+      "Über den Meta-Werbeanzeigenmanager erreichen Sie auf Facebook nahezu jede Zielgruppe zu niedrigen Kontaktkosten. Entscheidend ist nicht die Reichweite, sondern das Targeting und der Weg nach dem Klick.",
+    problem: {
+      heading: "Warum Facebook-Budgets oft versickern",
+      body: "Weil die Anzeige an alle geht und der Weg nach dem Klick fehlt.",
+      punkte: [
+        "Die Anzeige richtet sich an „alle“ statt an eine klar umrissene Zielgruppe.",
+        "Nach dem Klick landet der Interessent auf einer Seite, die das Versprechen nicht einlöst.",
+        "Kein Pixel, keine Messung — niemand weiß, welche Anzeige Anfragen bringt.",
+        "Das Werbekonto und der Pixel liegen bei der Agentur.",
+      ],
+    },
+    loesung: {
+      heading: "Wie ich Facebook-Ads aufsetze",
+      body: "Scharfe Zielgruppen, saubere Messung und eine Landingpage, die das Anzeigenversprechen hält.",
+      punkte: [
+        "Scharfe Zielgruppen: Interessen, Region, Verhalten — und Lookalikes aus Ihren besten Kunden.",
+        "Meta-Pixel sauber eingerichtet, Messung bis zur Anfrage.",
+        "Anzeige und Landingpage sprechen dieselbe Sprache — Botschaftsgleichheit.",
+        "Ihr eigenes Werbekonto und Ihr eigener Pixel, volle Kontrolle.",
+      ],
+    },
+    ablauf: [
+      {
+        titel: "Peilung",
+        body: "Wir bestimmen Zielgruppe, Angebot und Ziel — an wen die Anzeige geht und was sie auslösen soll.",
+      },
+      {
+        titel: "Kurs setzen",
+        body: "Zielgruppen, Pixel/Messung und Anzeigenkonzept stehen, bevor Budget fließt.",
+      },
+      {
+        titel: "Ausrüsten",
+        body: "Kampagnen gehen live, abgestimmt auf eine Landingpage, die das Versprechen einlöst.",
+      },
+      {
+        titel: "Auslaufen",
+        body: "Nach Kosten pro Anfrage optimieren, schwache Zielgruppen kappen, starke skalieren.",
+      },
+    ],
+    ergebnis: {
+      heading: "Was danach anders ist",
+      body: "Sie erreichen die Richtigen statt möglichst viele — und wissen, was wirkt.",
+      punkte: [
+        "Sie erreichen die Richtigen statt möglichst viele.",
+        "Jede Anzeige ist messbar auf Anfragen zurückführbar.",
+        "Pixel, Konto und Zielgruppen gehören Ihnen.",
+      ],
+    },
+    faq: [
+      {
+        frage: "Facebook oder Instagram — was ist besser?",
+        antwort:
+          "Das hängt von Ihrer Zielgruppe ab. Facebook erreicht tendenziell ein älteres, breiteres Publikum, Instagram ein jüngeres, visuelleres. Beide laufen über denselben Meta-Werbeanzeigenmanager, sodass wir sie einzeln oder kombiniert ausspielen — je nachdem, wo Ihre Kunden sind.",
+      },
+      {
+        frage: "Was kostet Facebook-Werbung?",
+        antwort:
+          "Die Kontaktkosten sind niedrig; das Werbebudget geht an Meta und ist Ihr Geld, mein Honorar ist davon getrennt und transparent. Das sinnvolle Startbudget besprechen wir vorher.",
+      },
+      {
+        frage: "Was ist der Meta-Pixel?",
+        antwort:
+          "Ein kleines Mess-Snippet auf Ihrer Website, das erfasst, welche Anzeige zu einer Anfrage geführt hat, und Zielgruppen aufbaut. Ich richte ihn datensparsam und in Ihrem Konto ein — er gehört Ihnen.",
+      },
+      {
+        frage: "Gehört mir das Werbekonto?",
+        antwort:
+          "Ja. Ich arbeite in Ihrem eigenen Meta-Business-Konto. Kampagnen, Pixel und Zielgruppen bleiben bei einer Trennung vollständig bei Ihnen.",
+      },
+    ],
+    related: ["instagram-ads", "funnels", "google-ads"],
+  },
+  {
+    slug: "instagram-ads",
+    kategorie: "ads",
+    name: "Instagram Ads",
+    h1: "Instagram Ads — visuell überzeugen, gezielt aussteuern",
+    eyebrow: "Werbeanzeigen",
+    title: "Instagram Ads (Meta) Betreuung aus Castrop-Rauxel",
+    description:
+      "Instagram Ads über den Meta-Werbeanzeigenmanager: Feed, Stories und Reels für eine jüngere, visuelle Zielgruppe — mit klarer Messung bis zur Anfrage. Ihr Konto.",
+    claim:
+      "Instagram verkauft über Bilder und kurze Videos — an ein Publikum, das genau dort entscheidet.",
+    intro:
+      "Instagram ist visuell und jung. Wer hier gefunden werden will, überzeugt in Feed, Stories und Reels — in den ersten Sekunden. Über den Meta-Werbeanzeigenmanager steuere ich das gezielt aus und messe bis zur Anfrage.",
+    problem: {
+      heading: "Warum Instagram-Anzeigen oft verpuffen",
+      body: "Weil sie wie Werbung aussehen und keinen klaren nächsten Schritt haben.",
+      punkte: [
+        "Die Anzeige sieht aus wie Werbung — und wird im Feed sofort weggewischt.",
+        "Kein Format-Denken: dasselbe Bild für Feed, Story und Reel, obwohl jedes anders funktioniert.",
+        "Kein klarer nächster Schritt — schöner Post, keine Anfrage.",
+        "Keine Messung, welches Motiv wirklich zieht.",
+      ],
+    },
+    loesung: {
+      heading: "Wie ich Instagram-Ads baue",
+      body: "Nativ gedachte Anzeigen im richtigen Format, mit einem eindeutigen Weg ins Gespräch.",
+      punkte: [
+        "Anzeigen, die sich in den Feed einfügen statt zu stören — nativ gedacht.",
+        "Passende Formate für Feed, Stories und Reels statt Einheitsbrei.",
+        "Ein eindeutiger nächster Schritt: direkt ins Gespräch, nicht ins Leere.",
+        "Messung bis zur Anfrage, damit klar wird, welches Motiv Anfragen bringt.",
+      ],
+    },
+    ablauf: [
+      {
+        titel: "Peilung",
+        body: "Wir klären Zielgruppe, Angebot und den einen Schritt, den der Betrachter am Ende gehen soll.",
+      },
+      {
+        titel: "Kurs setzen",
+        body: "Zielgruppen, Formate und Messung stehen, bevor Budget fließt.",
+      },
+      {
+        titel: "Ausrüsten",
+        body: "Kampagnen gehen live — mit Motiven, die als Inhalt durchgehen.",
+      },
+      {
+        titel: "Auslaufen",
+        body: "Motive nach Ergebnis auswerten, das stärkste skalieren.",
+      },
+    ],
+    ergebnis: {
+      heading: "Was danach anders ist",
+      body: "Anzeigen, die wirken wie Inhalt — und eine junge Zielgruppe, die reagiert.",
+      punkte: [
+        "Ihre Anzeigen wirken wie Inhalt, nicht wie Störung.",
+        "Sie erreichen eine junge, kaufkräftige Zielgruppe gezielt.",
+        "Sie sehen, welches Motiv Anfragen bringt — und skalieren es.",
+      ],
+    },
+    faq: [
+      {
+        frage: "Brauche ich viele Follower für Instagram-Ads?",
+        antwort:
+          "Nein. Werbeanzeigen laufen unabhängig von Ihrer Followerzahl — Sie zahlen für Reichweite bei einer definierten Zielgruppe. Ein gepflegtes Profil hilft bei der Glaubwürdigkeit, ist aber keine Voraussetzung.",
+      },
+      {
+        frage: "Was kostet Instagram-Werbung?",
+        antwort:
+          "Instagram läuft über denselben Meta-Werbeanzeigenmanager wie Facebook; das Werbebudget geht an Meta und ist Ihr Geld, mein Honorar ist davon getrennt. Das Startbudget legen wir vorher gemeinsam fest.",
+      },
+      {
+        frage: "Reels, Stories oder Feed — was soll ich nehmen?",
+        antwort:
+          "Oft eine Kombination. Reels bringen günstige Reichweite, Stories eignen sich für direkte Aktionen, der Feed für Vertrauen. Was zu Ihrem Angebot passt, klären wir in der Peilung.",
+      },
+      {
+        frage: "Gehört mir das Konto?",
+        antwort:
+          "Ja. Alles läuft in Ihrem eigenen Meta-Business-Konto — Kampagnen, Pixel und Zielgruppen bleiben bei Ihnen.",
+      },
+    ],
+    related: ["facebook-ads", "tiktok-ads", "funnels"],
+  },
+  {
+    slug: "tiktok-ads",
+    kategorie: "ads",
+    name: "TikTok Ads",
+    h1: "TikTok Ads — Reichweite, wo Aufmerksamkeit entsteht",
+    eyebrow: "Werbeanzeigen",
+    title: "TikTok Ads Betreuung aus Castrop-Rauxel",
+    description:
+      "TikTok Ads mit nativem Video-Denken: große Reichweite bei jüngeren Zielgruppen, günstige Views, klare Messung bis zur Anfrage. Konto und Daten gehören Ihnen.",
+    claim:
+      "Auf TikTok entsteht Aufmerksamkeit schneller als irgendwo sonst — wenn die Anzeige aussieht wie ein Video, nicht wie Werbung.",
+    intro:
+      "TikTok ist der Ort mit der derzeit günstigsten Aufmerksamkeit — längst nicht nur für Teenager. Der Schlüssel: Anzeigen müssen sich wie echte Videos anfühlen. Genau darauf baue ich TikTok-Kampagnen auf.",
+    problem: {
+      heading: "Warum die meisten TikTok-Anzeigen floppen",
+      body: "Weil sie wie Fernsehwerbung wirken und den ersten Moment verschenken.",
+      punkte: [
+        "Die Anzeige ist ein umgewidmeter Fernsehspot — auf TikTok sofort durchschaut und weggewischt.",
+        "Kein Hook in der ersten Sekunde, also kein Zuschauer in der zweiten.",
+        "Kein Plan, wie aus Reichweite eine Anfrage wird.",
+        "Keine Messung, welches Video trägt.",
+      ],
+    },
+    loesung: {
+      heading: "Wie ich TikTok-Ads baue",
+      body: "Natives Video-Denken, ein Hook in der ersten Sekunde und ein klarer nächster Schritt.",
+      punkte: [
+        "Natives Video-Denken: Anzeigen, die wirken wie Inhalt, nicht wie Werbung.",
+        "Hook in der ersten Sekunde — die Botschaft steht sofort.",
+        "Ein klarer nächster Schritt, direkt ins Gespräch.",
+        "Messung bis zur Anfrage, damit klar wird, welches Video trägt.",
+      ],
+    },
+    ablauf: [
+      {
+        titel: "Peilung",
+        body: "Wir klären, ob TikTok zu Ihrer Zielgruppe passt, und was die Kampagne auslösen soll. Passt es nicht, sage ich das.",
+      },
+      {
+        titel: "Kurs setzen",
+        body: "Zielgruppen, Hook- und Video-Konzept sowie die Messung stehen, bevor Budget fließt.",
+      },
+      {
+        titel: "Ausrüsten",
+        body: "Kampagnen gehen live — mit Videos, die als Inhalt durchgehen.",
+      },
+      {
+        titel: "Auslaufen",
+        body: "Nach Ergebnis auswerten, das stärkste Video skalieren.",
+      },
+    ],
+    ergebnis: {
+      heading: "Was danach anders ist",
+      body: "Günstige Aufmerksamkeit bei einer schwer erreichbaren Zielgruppe — mit klarer Messung.",
+      punkte: [
+        "Günstige Reichweite bei einer schwer erreichbaren Zielgruppe.",
+        "Anzeigen, die als Inhalt durchgehen statt zu stören.",
+        "Sie sehen, welches Video Anfragen bringt.",
+      ],
+    },
+    faq: [
+      {
+        frage: "Ist TikTok nur für junge Zielgruppen?",
+        antwort:
+          "Nicht mehr. Die Altersstruktur ist deutlich breiter geworden; viele kaufkräftige Erwachsene sind aktiv. Ob TikTok zu Ihrer Zielgruppe passt, klären wir ehrlich in der Peilung — wenn nicht, sage ich das.",
+      },
+      {
+        frage: "Was kostet TikTok-Werbung?",
+        antwort:
+          "Die Reichweite ist derzeit vergleichsweise günstig; das Werbebudget geht an TikTok und ist Ihr Geld, mein Honorar ist davon getrennt und transparent. Das Startbudget legen wir vorher fest.",
+      },
+      {
+        frage: "Brauche ich professionelle Videos?",
+        antwort:
+          "Eher im Gegenteil. Auf TikTok wirken authentische, direkt gefilmte Videos oft besser als Hochglanz. Wichtig sind Hook, Klarheit und ein nächster Schritt — nicht die Kameraauflösung.",
+      },
+      {
+        frage: "Gehört mir das Konto?",
+        antwort:
+          "Ja. TikTok-Ads laufen über Ihr eigenes TikTok-Business-Konto; Kampagnen und Daten bleiben bei Ihnen.",
+      },
+    ],
+    related: ["instagram-ads", "youtube-ads", "funnels"],
+  },
+  {
+    slug: "linkedin-ads",
+    kategorie: "ads",
+    name: "LinkedIn Ads",
+    h1: "LinkedIn Ads — B2B-Werbung mit chirurgischem Targeting",
+    eyebrow: "Werbeanzeigen",
+    title: "LinkedIn Ads Betreuung aus Castrop-Rauxel",
+    description:
+      "LinkedIn Ads für den B2B-Vertrieb: Zielgruppen nach Position, Branche und Unternehmen, höhere Klickpreise, aber hochwertige Entscheider-Kontakte. Ihr Konto, klare Messung.",
+    claim:
+      "Kein Kanal trifft Entscheider so präzise wie LinkedIn — nach Position, Branche und sogar Unternehmen.",
+    intro:
+      "Wenn Ihre Kunden andere Unternehmen sind, ist LinkedIn der präziseste Werbekanal überhaupt: Sie sprechen Menschen nach Jobtitel, Branche und Firma an. Die Klickpreise sind höher — die Kontakte dafür deutlich wertvoller.",
+    problem: {
+      heading: "Warum LinkedIn-Budgets oft verpuffen",
+      body: "Weil zu breit ausgesteuert und zu früh verkauft wird.",
+      punkte: [
+        "Die Zielgruppe ist zu breit gefasst — teure Klicks von den Falschen.",
+        "Die Anzeige verkauft sofort, statt erst Vertrauen aufzubauen — im B2B ein Fehler.",
+        "Kein Weg vom Klick zum Gespräch, der zur langen B2B-Entscheidung passt.",
+        "Kosten pro Kontakt werden nicht sauber gemessen.",
+      ],
+    },
+    loesung: {
+      heading: "Wie ich LinkedIn-Ads aufsetze",
+      body: "Chirurgisches Targeting und Botschaften, die zur Entscheidungslänge im B2B passen.",
+      punkte: [
+        "Chirurgisches Targeting: Position, Branche, Unternehmensgröße, einzelne Firmen.",
+        "Botschaften, die zum B2B-Zyklus passen — erst Relevanz, dann Angebot.",
+        "Ein Weg ins Gespräch, der die längere B2B-Entscheidung berücksichtigt.",
+        "Messung bis zum qualifizierten Kontakt, nicht nur bis zum Klick.",
+      ],
+    },
+    ablauf: [
+      {
+        titel: "Peilung",
+        body: "Wir schärfen Wunschkunde, Entscheider und Angebot — an wen genau die Anzeige geht.",
+      },
+      {
+        titel: "Kurs setzen",
+        body: "Zielgruppen, Botschaft und Messung stehen, bevor Budget fließt.",
+      },
+      {
+        titel: "Ausrüsten",
+        body: "Kampagnen gehen live, abgestimmt auf einen Weg, der zum B2B-Zyklus passt.",
+      },
+      {
+        titel: "Auslaufen",
+        body: "Nach Kosten pro qualifiziertem Kontakt optimieren, nicht nach Klickpreis.",
+      },
+    ],
+    ergebnis: {
+      heading: "Was danach anders ist",
+      body: "Weniger, aber deutlich hochwertigere Kontakte — genau die Richtigen.",
+      punkte: [
+        "Sie erreichen genau die Entscheider, die Sie brauchen.",
+        "Weniger, aber deutlich hochwertigere Kontakte.",
+        "Konto, Zielgruppen und Daten gehören Ihnen.",
+      ],
+    },
+    faq: [
+      {
+        frage: "Lohnt sich LinkedIn bei höheren Klickpreisen?",
+        antwort:
+          "Im B2B fast immer, weil ein einziger gewonnener Kunde oft ein Vielfaches der Werbekosten wert ist. Entscheidend ist nicht der Klickpreis, sondern der Wert eines Abschlusses — das rechnen wir vor dem Start durch.",
+      },
+      {
+        frage: "Was kostet LinkedIn-Werbung?",
+        antwort:
+          "Die Klickpreise liegen über anderen Plattformen; das Werbebudget geht an LinkedIn und ist Ihr Geld, mein Honorar ist davon getrennt. Wegen der höheren Preise legen wir das Mindestbudget vorher realistisch fest.",
+      },
+      {
+        frage: "Ist LinkedIn auch für kleine Unternehmen sinnvoll?",
+        antwort:
+          "Wenn Sie an andere Unternehmen verkaufen, ja — gerade weil Sie mit kleinem Budget sehr präzise nur Ihre Wunschkunden ansprechen können, statt breit zu streuen.",
+      },
+      {
+        frage: "Gehört mir das Konto?",
+        antwort:
+          "Ja. Alles läuft über Ihren eigenen LinkedIn-Kampagnenmanager; Kampagnen, Zielgruppen und Daten bleiben bei Ihnen.",
+      },
+    ],
+    related: ["google-ads", "funnels", "facebook-ads"],
+  },
 ];
 
 /** Nachschlagen per Slug — gibt undefined zurück, wenn es die Leistung nicht gibt. */
@@ -665,3 +1188,9 @@ export function getRelated(service: Service): Service[] {
 }
 
 export const serviceSlugs = services.map((s) => s.slug);
+
+/** Die Kernleistungen (alles außer Werbeanzeigen). */
+export const kernServices = services.filter((s) => s.kategorie !== "ads");
+
+/** Die Werbeanzeigen-Plattformen als eigene Gruppe. */
+export const adsServices = services.filter((s) => s.kategorie === "ads");

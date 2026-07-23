@@ -20,7 +20,7 @@ import {
 } from "@/lib/seo";
 import { getRelated, getService, services } from "@/lib/services";
 
-/** Alle sieben Leistungsseiten werden zur Buildzeit statisch erzeugt. */
+/** Alle Leistungsseiten (Kern + Werbeanzeigen) werden zur Buildzeit statisch erzeugt. */
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
 }

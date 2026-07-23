@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { services } from "@/lib/services";
+import { adsServices, kernServices } from "@/lib/services";
 import { site } from "@/lib/site";
 import { WHATSAPP_NUMMER_LESBAR, waLink, waZusatz } from "@/lib/whatsapp";
 import { Anker } from "./Anker";
@@ -58,7 +58,21 @@ export function Footer() {
           <nav aria-label="Leistungen" className="md:col-span-4">
             <h2 className="eyebrow">Leistungen</h2>
             <ul className="mt-5 flex flex-col gap-2.5">
-              {services.map((s) => (
+              {kernServices.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    href={`/leistungen/${s.slug}`}
+                    className="text-small text-ink-soft transition-colors hover:text-accent"
+                  >
+                    {s.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h2 className="eyebrow mt-7">Werbeanzeigen</h2>
+            <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-2.5">
+              {adsServices.map((s) => (
                 <li key={s.slug}>
                   <Link
                     href={`/leistungen/${s.slug}`}

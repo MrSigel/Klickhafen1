@@ -4,21 +4,21 @@ import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { SeitenHero } from "@/components/SeitenHero";
 import { ServiceCard } from "@/components/ServiceCard";
-import { Container } from "@/components/ui";
+import { Container, Eyebrow } from "@/components/ui";
 import {
   breadcrumbSchema,
   buildMetadata,
   keywordsFuer,
   leistungenListeSchema,
 } from "@/lib/seo";
-import { services } from "@/lib/services";
+import { adsServices, kernServices, services } from "@/lib/services";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Leistungen — Webdesign, Entwicklung, Automationen & SEO",
+  title: "Leistungen — Webdesign, Entwicklung, SEO & Werbeanzeigen",
   description:
-    "Alle Leistungen von Klickhafen im Überblick: Webdesign, Webentwicklung, Automationen, SEO/AEO/GEO/CRO, Funnels, individuelle und Baukasten-Lösungen.",
+    "Alle Leistungen von Klickhafen: Webdesign, Webentwicklung, Automationen, SEO/AEO/GEO/CRO, Funnels, individuelle und Baukasten-Lösungen — plus Werbeanzeigen auf Google, YouTube, Facebook, Instagram, TikTok und LinkedIn.",
   path: "/leistungen",
-  keywords: keywordsFuer("Leistungen", "individuelle Lösungen", "Baukasten"),
+  keywords: keywordsFuer("Leistungen", "Google Ads", "Social Media Werbung"),
 });
 
 export default function LeistungenUebersicht() {
@@ -26,8 +26,8 @@ export default function LeistungenUebersicht() {
     <>
       <JsonLd
         schema={[
-          // ItemList sagt Crawlern, dass dies eine vollständige Übersicht der
-          // sieben Leistungen ist — sonst müssen sie es aus dem Markup raten.
+          // ItemList sagt Crawlern, dass dies die vollständige Übersicht aller
+          // Leistungen ist — sonst müssen sie es aus dem Markup raten.
           leistungenListeSchema(services),
           breadcrumbSchema([{ name: "Leistungen", path: "/leistungen" }]),
         ]}
@@ -38,25 +38,48 @@ export default function LeistungenUebersicht() {
         eyebrow="Ausrüstung"
         titel={
           <>
-            Sieben Leistungen.
+            Die volle Ausrüstung.
             <br />
             Ein Hafen.
           </>
         }
         gross
-        intro="Jede Leistung funktioniert für sich. Zusammen ergeben sie einen Auftritt, der gefunden wird, überzeugt und Arbeit abnimmt. Wählen Sie den Bereich, der Sie gerade beschäftigt."
+        intro="Von der Website bis zur Werbeanzeige: Jede Leistung funktioniert für sich, zusammen ergeben sie einen Auftritt, der gefunden wird, überzeugt und Anfragen bringt. Wählen Sie den Bereich, der Sie gerade beschäftigt."
       />
 
       <section className="bg-paper-sunk py-16 md:py-24">
         <Container>
-          {/* Versteckte H2: hält die Überschriften-Ordnung (H1→H2→H3 der Karten)
-              intakt, ohne die Optik zu ändern. */}
-          <h2 className="sr-only">Alle Leistungen im Überblick</h2>
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {services.map((service, i) => (
+          <div>
+            <Eyebrow>Kernleistungen</Eyebrow>
+            <h2 className="mt-4 max-w-[24ch] text-h2 text-balance">
+              Alles, was Ihr Auftritt braucht.
+            </h2>
+          </div>
+          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {kernServices.map((service, i) => (
               <li key={service.slug} className="h-full">
                 <Reveal delay={i * 0.04} className="h-full">
+                  <ServiceCard service={service} />
+                </Reveal>
+              </li>
+            ))}
+          </ul>
 
+          <div className="mt-20 border-t border-line pt-16">
+            <Eyebrow>Werbeanzeigen</Eyebrow>
+            <h2 className="mt-4 max-w-[30ch] text-h2 text-balance">
+              Bezahlte Reichweite, die auf Anfragen zielt.
+            </h2>
+            <p className="mt-5 max-w-[64ch] text-ink-soft">
+              Kampagnen auf der Plattform, auf der Ihre Kunden sind — gemessen
+              bis zur Anfrage. Ihr Werbebudget bleibt Ihr Geld, getrennt vom
+              Honorar, und das Werbekonto gehört Ihnen.
+            </p>
+          </div>
+          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {adsServices.map((service, i) => (
+              <li key={service.slug} className="h-full">
+                <Reveal delay={i * 0.04} className="h-full">
                   <ServiceCard service={service} />
                 </Reveal>
               </li>
