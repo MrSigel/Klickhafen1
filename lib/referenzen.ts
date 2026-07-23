@@ -43,6 +43,19 @@ export type Referenz = {
 
 export const referenzen: Referenz[] = [
   {
+    slug: "sonnenwerk",
+    bild: "sonnenwerk.webp",
+    name: "Sonnenwerk Solar",
+    url: "https://sonnenwerk-solar.de",
+    domain: "sonnenwerk-solar.de",
+    branche: "Photovoltaik · Angebotsvergleich",
+    claim:
+      "Geprüfte Solar-Angebote aus der Region — mehrere Fachbetriebe aus einer einzigen Anfrage.",
+    aufgabe:
+      "Ein Auftritt, der eine große Kaufentscheidung leicht macht: ein klares Versprechen im Hero, ein geführter Weg statt zwölf Abzweigungen und ein kurzer Schritt zur unverbindlichen Anfrage — bundesweit ausgelegt.",
+    leistungen: ["webdesign", "webentwicklung", "funnels"],
+  },
+  {
     slug: "limit-breakers",
     bild: "limit-breakers.webp",
     name: "Limit Breakers",
@@ -92,6 +105,19 @@ export const referenzen: Referenz[] = [
       "Systemische Aufstellung in Aschaffenburg und online — für Menschen, deren Leben Muster wiederholt.",
     aufgabe:
       "Ein sensibles Thema braucht eine Oberfläche, die nichts überverkauft. Zurückgenommen, ruhig, mit viel Raum — die Gestaltung tritt bewusst hinter das Anliegen zurück und macht den ersten Schritt trotzdem leicht.",
+    leistungen: ["webdesign", "webentwicklung"],
+  },
+  {
+    slug: "tus-bovinghausen",
+    bild: "tus-bovinghausen.webp",
+    name: "TuS Bövinghausen 25",
+    url: "https://tus-bovinghausen-25.onrender.com/",
+    domain: "tus25.de",
+    branche: "Sportverein · Fußball",
+    claim:
+      "Fußball mit Herz aus Dortmund — ein Verein, viele Mannschaften, eine Leidenschaft.",
+    aufgabe:
+      "Ein digitales Zuhause für Verein, Mannschaften und Fans: übersichtlich, mobil bedienbar und leicht zu pflegen, damit News, Teams und Termine an einem Ort zusammenlaufen. Eines der ersten Klickhafen-Projekte.",
     leistungen: ["webdesign", "webentwicklung"],
   },
 ];

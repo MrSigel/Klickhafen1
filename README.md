@@ -167,7 +167,7 @@ nicht geschätzt:
 3. **Ein CTA.** Nur einer. Der zweite Button führte nach `/referenzen`, wohin
    der Beleg direkt darunter auch führt — doppelt, und auf 360px-Geräten brach
    er um und schob den Beleg unter die Falz.
-4. **Beleg** — die vier echten Kundendomains. Das stärkste Signal der Seite.
+4. **Beleg** — die sechs echten Kundenprojekte. Das stärkste Signal der Seite.
 5. **Fakten-Sockel** — Festpreis / Antwortzeit / Code gehört Ihnen, aus
    `site.fakten`. Beantwortet die drei Einwände, die vor jedem Auftrag stehen.
 

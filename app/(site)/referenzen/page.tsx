@@ -12,7 +12,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Referenzen — Websites, die ich gebaut habe",
   description:
-    "Ausgewählte Projekte von Klickhafen: Limit Breakers, AlpenDry, Selin Weikard und Sibylle Bergold. Vier Branchen, vier Aufgaben, alle live erreichbar.",
+    "Ausgewählte Projekte von Klickhafen: Sonnenwerk Solar, Limit Breakers, AlpenDry, TuS Bövinghausen u. a. — sechs Branchen, sechs Aufgaben, alle live erreichbar.",
   path: "/referenzen",
   keywords: keywordsFuer("Referenzen", "Portfolio", "Kundenprojekte"),
 });
@@ -59,7 +59,7 @@ export default function ReferenzenSeite() {
           </>
         }
         gross
-        intro="Vier Projekte, vier völlig verschiedene Aufgaben — von der Unternehmensberatung bis zum 24/7-Notdienst. Jedes davon habe ich vollständig allein umgesetzt. Alle sind live und lassen sich nachprüfen."
+        intro="Sechs Projekte, sechs völlig verschiedene Aufgaben — von der Solar-Anfrage über die Unternehmensberatung bis zum Sportverein. Jedes davon habe ich vollständig allein umgesetzt. Alle sind live und lassen sich nachprüfen."
       />
 
       <section className="py-16 md:py-24">

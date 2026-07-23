@@ -34,7 +34,7 @@ export default function Startseite() {
           braucht, erfuhr daraus nicht, was er bekommt. Der Hausstil verlangt
           ausdrücklich das Gegenteil ("öffne mit dem konkretesten Element").
           Deshalb jetzt: konkretes Versprechen, drei Fakten gegen die drei
-          Einwände, und echter Beleg — die vier Kundenseiten sind das
+          Einwände, und echter Beleg — die sechs Kundenseiten sind das
           Konkreteste, was es gibt. Die Metapher lebt in den Eyebrows und auf
           /philosophie weiter, sie trägt aber nicht mehr den Verkauf.
           --------------------------------------------------------------- */}
@@ -78,7 +78,7 @@ export default function Startseite() {
             </div>
 
             {/* Beleg direkt unter dem CTA — nachgemessen: so liegt er auf
-                jedem Gerät über der Falzlinie. Vier echte, live nachprüfbare
+                jedem Gerät über der Falzlinie. Sechs echte, live nachprüfbare
                 Kundenseiten sind das stärkste Signal der Seite; darunter wäre
                 es verschenkt. Eine Zeile, kompakt, keine Kacheln. */}
             <Link
@@ -143,7 +143,7 @@ export default function Startseite() {
             <div>
               <Eyebrow>Im Logbuch</Eyebrow>
               <h2 className="mt-5 max-w-[20ch] text-h1 text-balance">
-                Vier Branchen. Vier Aufgaben. Alle live.
+                Sechs Branchen. Sechs Aufgaben. Alle live.
               </h2>
             </div>
             <Link
