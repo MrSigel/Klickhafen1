@@ -37,6 +37,14 @@ export type Service = {
   faq: Faq[];
   /** Slugs verwandter Leistungen für die interne Verlinkung */
   related: string[];
+  /**
+   * Optional: Pfad oder URL einer Präsentations-PDF. Ist es gesetzt, zeigt die
+   * Leistungsseite im Kopf den Button „Detailansicht", der die PDF in einem
+   * neuen Tab öffnet. Leer = kein Button. Ablage später z. B. unter
+   * `/public/praesentationen/<slug>.pdf` (dann Wert `/praesentationen/<slug>.pdf`)
+   * oder eine externe URL.
+   */
+  praesentation?: string;
 };
 
 export const services: Service[] = [

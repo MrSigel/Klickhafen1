@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { SeitenHero } from "@/components/SeitenHero";
 import { ServiceCard } from "@/components/ServiceCard";
-import { Container, CtaWhatsApp, Eyebrow } from "@/components/ui";
+import { ArrowUpRight, Container, CtaWhatsApp, Eyebrow } from "@/components/ui";
 import { postsFuerLeistung } from "@/lib/blog";
 import { referenzenFuerLeistung } from "@/lib/referenzen";
 import {
@@ -78,9 +78,22 @@ export default async function Leistungsseite({ params }: Props) {
         titel={service.h1}
         intro={service.intro}
         aktion={
-          <CtaWhatsApp service={service.slug} serviceName={service.name}>
-            {service.name} besprechen
-          </CtaWhatsApp>
+          <div className="flex flex-wrap items-center gap-3">
+            <CtaWhatsApp service={service.slug} serviceName={service.name}>
+              {service.name} besprechen
+            </CtaWhatsApp>
+            {service.praesentation && (
+              <a
+                href={service.praesentation}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/det inline-flex items-center gap-2.5 rounded-md border border-ink-faint px-6 py-3.5 text-small text-ink transition-colors duration-200 hover:border-accent hover:text-accent"
+              >
+                Detailansicht
+                <ArrowUpRight className="transition-transform duration-200 group-hover/det:translate-x-0.5 group-hover/det:-translate-y-0.5" />
+              </a>
+            )}
+          </div>
         }
         beleg={<HeroBeleg referenzen={belege} />}
       />
